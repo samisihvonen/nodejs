@@ -19,7 +19,7 @@ const router = express.Router()
 router.post('/', register)
 router.get('/:id', getUserById)
 router.get('/profile/:token', getUserByToken)
-router.patch('/:id', upload.single('image'), updateProfile)
+router.post('/:id', upload.single('image'), updateProfile)
 router.post('/resend', resendMail)
 router.post('/login', authCheck)
 

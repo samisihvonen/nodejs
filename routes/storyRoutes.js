@@ -16,7 +16,7 @@ const {
 const router = express.Router()
 
 // Story Routes
-router.post('/', protect, createStory)
+router.post('/', upload.single('image'), protect, createStory)
 router.patch('/:id', protect, editStory)
 router.delete('/:id', protect, removeStory)
 router.get('/', protect, getAllStories)
