@@ -256,7 +256,6 @@ const updateProfile = async (req, res) => {
       req.body
 
     const host = req.hostname
-    const filePath = req.protocol + '://' + host + ':5000/' + req.file.path
 
     const updatedProfile = {
       fname: req.body.fname,
@@ -265,7 +264,7 @@ const updateProfile = async (req, res) => {
       died: req.body.died,
       birthplace: req.body.birthplace,
       placeofdeath: req.body.placeofdeath,
-      image: filePath
+      image: req.file.path
     }
 
     console.log('updating profile', updatedProfile)
